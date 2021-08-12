@@ -7,7 +7,7 @@ var book_controller = require('../controllers/bookController');
 var author_controller = require('../controllers/authorController');
 var genre_controller = require('../controllers/genreController');
 var book_instance_controller = require('../controllers/bookinstanceController');
-
+var publisher_controller = require('../controllers/publisher');
 
 /// BOOK ROUTES ///
 
@@ -118,5 +118,18 @@ router.get('/bookinstance/:id', book_instance_controller.bookinstance_detail);
 // GET request for list of all BookInstance.
 router.get('/bookinstances', book_instance_controller.bookinstance_list);
 
+//Publisher Routes
+
+// GET request for creating a Publisher.
+router.get('/publisher/create', publisher_controller.publisher_create_get);
+
+// POST request for creating Publisher.
+router.post('/publisher/create', publisher_controller.publisher_create_post);
+
+// GET request for one Publisher.
+router.get('/genre/:id', publisher_controller.publisher_detail);
+
+// GET request for list of all Publishers.
+router.get('/genres', publisher_controller.publisher_list);
 
 module.exports = router;
